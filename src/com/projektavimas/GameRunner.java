@@ -8,6 +8,7 @@ import com.projektavimas.gameObjects.cell.Position;
 import com.projektavimas.gameObjects.field.FieldCellsManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class GameRunner {
 
@@ -19,7 +20,7 @@ public class GameRunner {
 
     public void start() {
 
-        ArrayList<ArrayList<RandomCell>> cellMatrix = setupInitializer.getFieldCellsManager().getField().getFieldArray();
+        List<List<RandomCell>> cellMatrix = setupInitializer.getFieldCellsManager().getField().getFieldArray();
         View view = new View(setupInitializer.getFieldCellsManager());
         InputManager inputManager = setupInitializer.getInputManager();
         FieldCellsManager fieldCellsManager = setupInitializer.getFieldCellsManager();

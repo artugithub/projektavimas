@@ -5,6 +5,7 @@ import com.projektavimas.gameObjects.cell.Position;
 import com.projektavimas.gameObjects.cell.RandomCellBuilder;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FieldPopulator {
 
@@ -17,7 +18,7 @@ public class FieldPopulator {
     }
 
     public void populateField() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = fieldToPopulate.getFieldArray();
+        List<List<RandomCell>> fieldMatrix = fieldToPopulate.getFieldArray();
         for (int i = 0; i < fieldToPopulate.getBorderSize(); i++) {
             fieldMatrix.add(new ArrayList<RandomCell>());
             for (int j = 0; j < fieldToPopulate.getBorderSize(); j++) {

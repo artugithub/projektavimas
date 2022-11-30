@@ -13,6 +13,10 @@ public class GameSettings {
         this.fieldBorderLength = fieldBorderLength;
     }
 
+    public static GameSettings createGameSettings() {
+        return new GameSettings();
+    }
+
     public void setMineCount(int mineCount) {
         this.mineCount = mineCount;
     }

@@ -6,6 +6,7 @@ import com.projektavimas.gameObjects.cell.Status;
 import com.projektavimas.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FieldCellsManager {
 
@@ -29,7 +30,7 @@ public class FieldCellsManager {
     }
 
     public void setCellsMineCount() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = field.getFieldArray();
+        List<List<RandomCell>> fieldMatrix = field.getFieldArray();
         for (int i = 0; i < fieldMatrix.size(); i++) {
             for (int j = 0; j < fieldMatrix.get(i).size(); j++) {
                 RandomCell currentRandomCell = fieldMatrix.get(i).get(j);
@@ -54,12 +55,12 @@ public class FieldCellsManager {
         }
     }
 
-    public void setMineCount(int col, int row, RandomCell randomCell, Position position, ArrayList<ArrayList<RandomCell>> fieldMatrix) {
+    public void setMineCount(int col, int row, RandomCell randomCell, Position position, List<List<RandomCell>> fieldMatrix) {
         position.setColRow(col, row);
         validateAndMineIncrease(randomCell, position, fieldMatrix);
     }
 
-    public void validateAndMineIncrease(RandomCell randomCellToAdjust, Position offsetPos, ArrayList<ArrayList<RandomCell>> fieldMatrix) {
+    public void validateAndMineIncrease(RandomCell randomCellToAdjust, Position offsetPos, List<List<RandomCell>> fieldMatrix) {
         if (isCellInBounds(offsetPos.getPosition(), fieldMatrix.size())  && fieldMatrix.get(offsetPos.getCol()).get(offsetPos.getRow()).isMine()) {
 
             randomCellToAdjust.increaseMineCount();
@@ -74,7 +75,7 @@ public class FieldCellsManager {
     }
 
     public void setCellsNeighbours() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = field.getFieldArray();
+        List<List<RandomCell>> fieldMatrix = field.getFieldArray();
         for (int i = 0; i < fieldMatrix.size(); i++) {
             for (int j = 0; j < fieldMatrix.get(i).size(); j++) {
                 RandomCell currentRandomCell = fieldMatrix.get(i).get(j);
@@ -99,12 +100,12 @@ public class FieldCellsManager {
         }
     }
 
-    public void setNeighbor(int col, int row, RandomCell randomCell, Position position, ArrayList<ArrayList<RandomCell>> fieldMatrix) {
+    public void setNeighbor(int col, int row, RandomCell randomCell, Position position, List<List<RandomCell>> fieldMatrix) {
         position.setColRow(col, row);
         setCellNeighbor(randomCell, position, fieldMatrix);
     }
 
-    public void setCellNeighbor(RandomCell randomCellToAdjust, Position cellNeighborPos, ArrayList<ArrayList<RandomCell>> fieldMatrix) {
+    public void setCellNeighbor(RandomCell randomCellToAdjust, Position cellNeighborPos, List<List<RandomCell>> fieldMatrix) {
         if (isCellInBounds(cellNeighborPos, fieldMatrix.size())) {
             randomCellToAdjust.addNeighBor(fieldMatrix.get(cellNeighborPos.getCol()).get(cellNeighborPos.getRow()));
         }

@@ -5,6 +5,7 @@ import com.projektavimas.gameObjects.cell.Status;
 import com.projektavimas.gameObjects.field.FieldCellsManager;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class View {
 
@@ -28,7 +29,7 @@ public class View {
 
     public void printField() {
         System.out.print("\t");
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = fieldCellsManager.getField().getFieldArray();
+        List<List<RandomCell>> fieldMatrix = fieldCellsManager.getField().getFieldArray();
         for(int i = 0; i < fieldMatrix.size(); i++) {
             System.out.print(" " + i + " ");
         }

@@ -32,7 +32,9 @@ public class InputManager {
     }
 
     public Position getPlayerCellPosition() {
+        view.selectColumn();
         int column = getInput();
+        view.selectRow();
         int row = getInput();
         playerCellPosition.setColRow(column, row);
         return playerCellPosition;
@@ -42,7 +44,6 @@ public class InputManager {
         int i = -1;
         boolean isWrong = true;
         while(isWrong) {
-            view.selectColumn();
             i = scanner.nextInt();
             isWrong = validatePositionInput(i);
         }

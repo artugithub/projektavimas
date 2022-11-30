@@ -4,11 +4,12 @@ import com.projektavimas.gameObjects.cell.RandomCell;
 import com.projektavimas.GameSettings;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Field {
 
     private GameSettings gameSettings;
-    private ArrayList<ArrayList<RandomCell>> fieldArray = new ArrayList<>();
+    private List<List<RandomCell>> fieldArray = new ArrayList<>();
 
     public Field() {
     }
@@ -18,19 +19,19 @@ public class Field {
     }
 
     public void setFieldSize(int size) {
-        this.fieldArray = new ArrayList<ArrayList<RandomCell>>();
+        this.fieldArray = new ArrayList<>();
     }
 
     public int getBorderSize() {
         return gameSettings.getFieldBorderLength();
     }
 
-    public ArrayList<ArrayList<RandomCell>> getFieldArray() {
+    public List<List<RandomCell>> getFieldArray() {
         return fieldArray;
     }
 
     public void printOutCellsStatus() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = getFieldArray();
+        List<List<RandomCell>> fieldMatrix = getFieldArray();
         for (int i = 0; i < fieldMatrix.size(); i++) {
             for (int j = 0; j < fieldMatrix.get(i).size(); j++) {
                 RandomCell currentRandomCell = fieldMatrix.get(i).get(j);
@@ -44,7 +45,7 @@ public class Field {
     }
 
     public void printOutCellsMineCount() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = getFieldArray();
+        List<List<RandomCell>> fieldMatrix = getFieldArray();
         for (int i = 0; i < fieldMatrix.size(); i++) {
             for (int j = 0; j < fieldMatrix.get(i).size(); j++) {
                 RandomCell currentRandomCell = fieldMatrix.get(i).get(j);
@@ -58,7 +59,7 @@ public class Field {
     }
 
     public void printOutCellsIsMine() {
-        ArrayList<ArrayList<RandomCell>> fieldMatrix = getFieldArray();
+        List<List<RandomCell>> fieldMatrix = getFieldArray();
         for (int i = 0; i < fieldMatrix.size(); i++) {
             for (int j = 0; j < fieldMatrix.get(i).size(); j++) {
                 RandomCell currentRandomCell = fieldMatrix.get(i).get(j);
