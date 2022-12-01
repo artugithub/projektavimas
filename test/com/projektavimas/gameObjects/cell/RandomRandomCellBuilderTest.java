@@ -23,9 +23,9 @@ class RandomRandomCellBuilderTest {
     }
 
     @Test
-    void buildRandomCell() {
+    void buildRandomCell_returnsRandomCellWithMineOrNoMine() {
         testRandomCell = randomCellBuilder.buildRandomCell(positionMock);
-        assertNotNull(testRandomCell);
+        assertTrue(testRandomCell.isMine() || !testRandomCell.isMine());
     }
 
     @Test
